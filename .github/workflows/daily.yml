@@ -1,0 +1,18 @@
+# /.github/workflows/daily.yml
+# based on https://github.com/carbonphyber/watch-epa-superfund-sites/blob/main/.github/workflows/daily.yml
+on:
+  schedule:
+    - cron:  '*/15 * * * *' # Every 15 minutes
+name: Pull Data and Build
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Scrape
+      run: |
+        curl -o data/apple-security-updates-raw.xml --no-progress-meter "https://support.apple.com/en-us/HT201222?ts=$(date +%s)"
+    - uses: mikeal/publish-to-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub sets this for you
