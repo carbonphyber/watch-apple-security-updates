@@ -12,7 +12,14 @@ jobs:
     - uses: actions/checkout@master
     - name: Scrape
       run: |
-        curl -o data/apple-security-updates-raw.xml --no-progress-meter "https://support.apple.com/en-us/HT201222?ts=$(date +%s)"
-    - uses: mikeal/publish-to-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub sets this for you
+        curl -o data/apple-security-updates-raw.html --no-progress-meter "https://support.apple.com/en-us/HT201222?ts=$(date +%s)"
+    - name: Commit new data
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add data/
+        if [[ -n "$(git status -s -- data/)" ]]; then
+          TIMESTAMP_NOW=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+          git commit -m "data scraped at $TIMESTAMP_NOW"
+          git push
+        fi
