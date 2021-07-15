@@ -318,6 +318,8 @@
     
      var neighborInitData = {
         appDataSchemaVersion: '2.0.0',
+        webVitalDataThrottlingPercentage: 100,
+        reportThrottledWebVitalDataTypes: ['system:dom-content-loaded', 'system:load', 'system:unfocus', 'system:focus', 'system:unload', 'system:page-hide', 'system:visibility-change-visible', 'system:visibility-change-hidden', 'system:event', 'app:load', 'app:unload', 'app:event'],
         endpoint: 'https://supportmetrics.apple.com/content/services/stats'
     }
 
@@ -2675,22 +2677,27 @@ Apple Watch Series 1 and 2 will support watchOS 6 later this year.</td>
                 data-yes-label="We’re glad this article helped."
             ></label>
             <div class='form-element form-textbox-labelbelow' id='feedback'>
-                <textarea
-                  class='form-textbox form-textbox-textarea form-counter-textarea form-textbox-entered'
-                  data-no-placeholder="How can we make this article more helpful? (Optional)"
-                  data-yes-placeholder="Anything else you’d like us to know? (Optional)"
-                  data-max-length='250'
-                  aria-labelledby='optional_label'
-                  aria-describedby='char_limit_counter'
-                ></textarea>
-                <div class='form-textarea-paddingcover'>
-                    <div class='form-textarea-paddingcover-color'></div>
+                <div class="textarea-wrapper">
+                    
+                        <span class='form-label' id='optional_label' aria-hidden='true'></span>
+                        
+                    <div>
+                    <textarea
+                    class='form-textbox form-textbox-textarea form-counter-textarea form-textbox-entered'
+                    data-no-placeholder="How can we make this article more helpful? (Optional)"
+                    data-yes-placeholder="Anything else you’d like us to know? (Optional)"
+                    data-max-length='250'
+                    aria-labelledby='optional_label'
+                    aria-describedby='char_limit_counter'
+                    ></textarea>
+                    <div class='form-textbox-counter' id='char_limit_counter'>
+                            <span class='visuallyhidden' id="char-limit-message">Character limit:</span>
+                            <span class='form-counter'>250</span>
+                        </div>
+                    </div>
+                    
                 </div>
-                <span class='form-label' id='optional_label' aria-hidden='true'></span>
-                <div class='form-textbox-counter' id='char_limit_counter'>
-                    <span class='visuallyhidden' id="char-limit-message">Character limit:</span>
-                    <span class='form-counter'>250</span>
-                </div>
+
                 <label htmlFor='feedback-note'>Please don’t include any personal information in your comment.</label>
                 <div class='form-message-wrapper'>
                     <span class='form-message'>Maximum character limit is 250.</span>
@@ -2727,13 +2734,13 @@ Apple Watch Series 1 and 2 will support watchOS 6 later this year.</td>
 
         <div class='sectionFormInputLayout'>
             <form 
-                action='https://discussions.apple.com/create/question'
+                action='https://discussions.apple.com/post/question'
                 id='question-form'
                 method='get'
                 data-ss-analytics-link-component_name='Start a discussion'
                 data-ss-analytics-link-component_type="discussion"
                 data-ss-analytics-link-text='Submit my question'
-                data-ss-analytics-link-url='https://discussions.apple.com/create/question'
+                data-ss-analytics-link-url='https://discussions.apple.com/post/question'
                 data-ss-analytics-event=acs.link_click
                 data-ignore-tracking='true'
                 
@@ -2786,8 +2793,11 @@ Apple Watch Series 1 and 2 will support watchOS 6 later this year.</td>
                 <div id='promo' class='one'></div>
             </div>
             
+           
             <div id='flexbanner-wrapper'>
-                <div id='flexbanner'></div>
+                <div class='flexbanner-inner-wrapper'>
+                    <div id='flexbanner'></div>
+                </div>
             </div>
             
                 
