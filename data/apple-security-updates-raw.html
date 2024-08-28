@@ -315,29 +315,29 @@
     <script>
         var data = {
             showHelpFulfeedBack: true,
-        id: "HT201222",
+            id: "HT201222",
             locale: "en_US",
-                podCookie: "us~en",
-                    urlLocale: "en-us",
-                        isPreview : { { isPreview } },
-        productCategories: "PF7,PF6,PF9,PF8,PL170,PL171,133741,132617,PF20,PL139,PF22,PF28,PL153,PF26,133314,134327,PP23,PL182,133333,135555,PF10,PL128,PF12,PF17,PL183,135122,PF13,PF16,PL165,PF15,PF4",
+            podCookie: "us~en",
+            urlLocale: "en-us",
+            isPreview : false,
+            productCategories: "PF7,PF6,PF9,PF8,PL170,PL171,133741,132617,PF20,PL139,PF22,PF28,PL153,PF26,133314,134327,PP23,PL182,133333,135555,PF10,PL128,PF12,PF17,PL183,135122,PF13,PF16,PL165,PF15,PF4",
             source : "",
-                channel : "HOWTO_ARTICLES",
-                    bizChatLink : "https://bcrw.apple.com/urn:biz:b15ed773-9eed-11e7-baa2-7b88b04daa8e",
-                        bizChatIntentId : "ContactApple",
-                            bizChatGroupId : "%7B%22domain%22:%20%22AC%22,%22origin%22:%20%22OLS%22,%22page%22:%20%22acs::kb::ht::ARTICLEID::contact%20apple%20for%20support%20and%20service%20(en-us)%22%7D",
-                                bizChatBody : "%3Cstrong%3EChat using Messages%3C/strong%3E %3Cbr%3E Have a question? Ask now.",
-                                    bizChatSupportedCountries : "US",
-                                        bizChatthrottleValue : { { bizChatThrottleValue } },
-        bypassBizChat: { { bypassBizChat } },
-        akamaiEdgeScapeURL: "https://support.apple.com/edge-sight",
-            isNeighborJsEnabled: { { isNeighborJsEnabled } },
-        isOkapiEnabled: { { isOkapiEnabled } },
-        domain: "support.apple.com",
+            channel : "HOWTO_ARTICLES",
+            bizChatLink : "https://bcrw.apple.com/urn:biz:b15ed773-9eed-11e7-baa2-7b88b04daa8e",
+            bizChatIntentId : "ContactApple",
+            bizChatGroupId : "%7B%22domain%22:%20%22AC%22,%22origin%22:%20%22OLS%22,%22page%22:%20%22acs::kb::ht::ARTICLEID::contact%20apple%20for%20support%20and%20service%20(en-us)%22%7D",
+            bizChatBody : "%3Cstrong%3EChat using Messages%3C/strong%3E %3Cbr%3E Have a question? Ask now.",
+            bizChatSupportedCountries : "US",
+            bizChatthrottleValue : 0.0,
+            bypassBizChat: false,
+            akamaiEdgeScapeURL: "https://support.apple.com/edge-sight",
+            isNeighborJsEnabled: true,
+            isOkapiEnabled: false,
+            domain: "support.apple.com",
             dtmPageName: "acs.pageload",
-                showRecommendation : { { showRecommendedArticles } },
-        configApiURL: "https://support.apple.com/ols/api/config"
-                }
+            showRecommendation : false,
+            configApiURL: "https://support.apple.com/ols/api/config"
+        }
         window.appState = JSON.stringify(data);
 
         document.cookie = 'POD=us~en; path=/; domain=.apple.com; expires=' + new Date(Date.now() + (28 * 24 * 60 * 60 * 1000)).toGMTString();
